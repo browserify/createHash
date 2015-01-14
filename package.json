@@ -2,7 +2,8 @@
   "name": "create-hash",
   "version": "1.0.1",
   "description": "create hashes for browserify",
-  "main": "create-hash.js",
+  "browser": "create-hash.js",
+  "main": "index.js",
   "scripts": {
     "test": "node test.js | tspec"
   },
