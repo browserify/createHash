@@ -1,6 +1,6 @@
 {
   "name": "create-hash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "create hashes for browserify",
   "browser": "create-hash.js",
   "main": "index.js",
