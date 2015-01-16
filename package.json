@@ -2,14 +2,14 @@
   "name": "create-hash",
   "version": "1.0.2",
   "description": "create hashes for browserify",
-  "browser": "create-hash.js",
+  "browser": "browser.js",
   "main": "index.js",
   "scripts": {
     "test": "node test.js | tspec"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:crypto-browserify/crypto-createHash.git"
+    "url": "git@github.com:crypto-browserify/createHash.git"
   },
   "keywords": [
     "crypto"
@@ -17,9 +17,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/crypto-browserify/crypto-createHash/issues"
+    "url": "https://github.com/crypto-browserify/createHash/issues"
   },
-  "homepage": "https://github.com/crypto-browserify/crypto-createHash",
+  "homepage": "https://github.com/crypto-browserify/createHash",
   "devDependencies": {
     "hash-test-vectors": "^1.3.2",
     "tap-spec": "^2.1.2",
