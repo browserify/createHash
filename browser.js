@@ -1,26 +1,29 @@
 'use strict';
-var sha = require('sha.js')
+var inherits = require('inherits')
 var md5 = require('./md5')
 var rmd160 = require('ripemd160')
-var Transform = require('stream').Transform;
-var inherits = require('inherits')
+var sha = require('sha.js')
+
+var Transform = require('stream').Transform
 
 function HashNoConstructor(hash) {
-  Transform.call(this);
+  Transform.call(this)
+
   this._hash = hash
   this.buffers = []
 }
 
 inherits(HashNoConstructor, Transform)
 
-HashNoConstructor.prototype._transform = function (data, _, done) {
+HashNoConstructor.prototype._transform = function (data, _, next) {
   this.buffers.push(data)
-  done()
+
+  next()
 }
 
-HashNoConstructor.prototype._flush = function (done) {
+HashNoConstructor.prototype._flush = function (next) {
   this.push(this.digest())
-  done()
+  next()
 }
 
 HashNoConstructor.prototype.update = function (data, enc) {
@@ -42,24 +45,25 @@ HashNoConstructor.prototype.digest = function (enc) {
 
 function Hash(hash) {
   Transform.call(this)
+
   this._hash = hash
 }
 
 inherits(Hash, Transform)
 
-Hash.prototype._transform = function (data, enc, done) {
+Hash.prototype._transform = function (data, enc, next) {
   if (enc) data = new Buffer(data, enc)
 
   this._hash.update(data)
 
-  done()
+  next()
 }
 
-Hash.prototype._flush = function (done) {
+Hash.prototype._flush = function (next) {
   this.push(this._hash.digest())
   this._hash = null
 
-  done()
+  next()
 }
 
 Hash.prototype.update = function (data, enc) {
@@ -80,5 +84,6 @@ Hash.prototype.digest = function (enc) {
 module.exports = function createHash (alg) {
   if ('md5' === alg) return new HashNoConstructor(md5)
   if ('rmd160' === alg) return new HashNoConstructor(rmd160)
+
   return new Hash(sha(alg))
 }
