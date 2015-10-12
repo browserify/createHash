@@ -4,38 +4,28 @@ var zeroBuffer = new Buffer(intSize)
 zeroBuffer.fill(0)
 
 var charSize = 8
+var hashSize = 16
 
-function toArray (buf, bigEndian) {
+function toArray (buf) {
   if ((buf.length % intSize) !== 0) {
     var len = buf.length + (intSize - (buf.length % intSize))
     buf = Buffer.concat([buf, zeroBuffer], len)
   }
 
-  var arr = []
-  var fn = bigEndian ? buf.readInt32BE : buf.readInt32LE
-  for (var i = 0; i < buf.length; i += intSize) {
-    arr.push(fn.call(buf, i))
+  var arr = new Array(buf.length >>> 2)
+  for (var i = 0, j = 0; i < buf.length; i += intSize, j++) {
+    arr[j] = buf.readInt32LE(i)
   }
 
   return arr
 }
 
-function toBuffer (arr, size, bigEndian) {
-  var buf = new Buffer(size)
-  var fn = bigEndian ? buf.writeInt32BE : buf.writeInt32LE
 
+module.exports = function hash (buf, fn) {
+  var arr = fn(toArray(buf), buf.length * charSize)
+  var buf = new Buffer(hashSize)
   for (var i = 0; i < arr.length; i++) {
-    fn.call(buf, arr[i], i * 4, true)
+    buf.writeInt32LE(arr[i], i  << 2, true)
   }
-
   return buf
 }
-
-function hash (buf, fn, hashSize, bigEndian) {
-  if (!Buffer.isBuffer(buf)) buf = new Buffer(buf)
-
-  var arr = fn(toArray(buf, bigEndian), buf.length * charSize)
-  return toBuffer(arr, hashSize, bigEndian)
-}
-
-exports.hash = hash

@@ -8,7 +8,7 @@
  * See http://pajhome.org.uk/crypt/md5 for more info.
  */
 
-var helpers = require('./helpers')
+var makeHash = require('./make-hash')
 
 /*
  * Calculate the MD5 of an array of little-endian words, and a bit length
@@ -147,5 +147,5 @@ function bit_rol (num, cnt) {
 }
 
 module.exports = function md5 (buf) {
-  return helpers.hash(buf, core_md5, 16)
+  return makeHash(buf, core_md5)
 }
