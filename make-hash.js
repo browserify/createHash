@@ -20,12 +20,11 @@ function toArray (buf) {
   return arr
 }
 
-
 module.exports = function hash (buf, fn) {
   var arr = fn(toArray(buf), buf.length * charSize)
-  var buf = new Buffer(hashSize)
+  buf = new Buffer(hashSize)
   for (var i = 0; i < arr.length; i++) {
-    buf.writeInt32LE(arr[i], i  << 2, true)
+    buf.writeInt32LE(arr[i], i << 2, true)
   }
   return buf
 }
