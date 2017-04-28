@@ -31,7 +31,7 @@
   "dependencies": {
     "cipher-base": "^1.0.1",
     "inherits": "^2.0.1",
-    "ripemd160": "^1.0.0",
+    "ripemd160": "^2.0.0",
     "sha.js": "^2.4.0"
   }
 }

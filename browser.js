@@ -1,7 +1,7 @@
 'use strict'
 var inherits = require('inherits')
 var md5 = require('./md5')
-var rmd160 = require('ripemd160')
+var RIPEMD160 = require('ripemd160')
 var sha = require('sha.js')
 
 var Base = require('cipher-base')
@@ -46,7 +46,7 @@ Hash.prototype._final = function () {
 module.exports = function createHash (alg) {
   alg = alg.toLowerCase()
   if (alg === 'md5') return new HashNoConstructor(md5)
-  if (alg === 'rmd160' || alg === 'ripemd160') return new HashNoConstructor(rmd160)
+  if (alg === 'rmd160' || alg === 'ripemd160') return new Hash(new RIPEMD160())
 
   return new Hash(sha(alg))
 }
