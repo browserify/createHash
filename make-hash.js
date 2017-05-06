@@ -1,4 +1,7 @@
 'use strict'
+if (typeof Buffer === 'undefined') {
+  global.Buffer = require('buffer').Buffer
+}
 var intSize = 4
 var zeroBuffer = new Buffer(intSize)
 zeroBuffer.fill(0)
