@@ -1,4 +1,5 @@
 'use strict'
+var Buffer = require('safe-buffer').Buffer
 var inherits = require('inherits')
 var md5 = require('./md5')
 var RIPEMD160 = require('ripemd160')
