@@ -32,6 +32,7 @@
     "cipher-base": "^1.0.1",
     "inherits": "^2.0.1",
     "ripemd160": "^2.0.0",
+    "safe-buffer": "^5.0.1",
     "sha.js": "^2.4.0"
   }
 }
