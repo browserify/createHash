@@ -9,11 +9,18 @@
 
 	"overrides": [
 		{
+			"files": "browser.js",
+			"rules": {
+				"global-require": "off",
+			},
+		},
+		{
 			"files": [
-				"browser.js",
+				"browser.*.js",
 			],
 			"rules": {
 				"no-underscore-dangle": "warn",
+				"sort-keys": "off",
 			},
 		},
 	],
