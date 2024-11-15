@@ -1,5 +1,7 @@
-var MD5 = require('md5.js')
+'use strict';
+
+var MD5 = require('md5.js');
 
 module.exports = function (buffer) {
-  return new MD5().update(buffer).digest()
-}
+	return new MD5().update(buffer).digest();
+};

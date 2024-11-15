@@ -1,0 +1,20 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-style": "off",
+	},
+
+	"overrides": [
+		{
+			"files": [
+				"browser.js",
+			],
+			"rules": {
+				"no-underscore-dangle": "warn",
+			},
+		},
+	],
+}

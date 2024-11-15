@@ -1,1 +1,3 @@
-module.exports = require('crypto').createHash
+'use strict';
+
+module.exports = require('crypto').createHash;
