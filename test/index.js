@@ -7,7 +7,7 @@ var vectors = require('hash-test-vectors')
 vectors.forEach(function (vector) {
   vector.ripemd160 = vector.rmd160
 })
-var createHash = require('./browser')
+var createHash = require('../browser')
 
 algorithms.forEach(function (algorithm) {
   test('test ' + algorithm + ' against test vectors', function (t) {
