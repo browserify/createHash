@@ -26,8 +26,10 @@
   "homepage": "https://github.com/crypto-browserify/createHash",
   "dependencies": {
     "cipher-base": "^1.0.1",
+    "hash-base": "=3.0.3",
     "inherits": "^2.0.1",
     "md5.js": "^1.3.4",
+    "readable-stream": "^2.3.8",
     "ripemd160": "^2.0.1",
     "sha.js": "^2.4.0"
   },
