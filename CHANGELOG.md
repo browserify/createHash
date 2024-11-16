@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.3.0](https://github.com/browserify/createHash/compare/v1.2.0...v1.3.0) - 2024-11-16
+
+### Merged
+
+- 1.2.0 [`#23`](https://github.com/browserify/createHash/pull/23)
+
+### Commits
+
+- [New] add a new noble-based implementation in modern browsers [`53fa3fa`](https://github.com/browserify/createHash/commit/53fa3fa277070eef0e326e9e153e932f40980d71)
+- [eslint] switch to eslint [`11f35f1`](https://github.com/browserify/createHash/commit/11f35f18aa8b521420e519c9e16f202d25a85ea4)
+- [meta] fix package.json indentation [`0bc497d`](https://github.com/browserify/createHash/commit/0bc497d7719852b6559721fbd6f6429f92f090fe)
+- [meta] add `auto-changelog` [`b85024a`](https://github.com/browserify/createHash/commit/b85024a40bc1c49111702305ebfcbdf827d84e2c)
+- [Tests] migrate from travis to GHA [`e65c363`](https://github.com/browserify/createHash/commit/e65c3633e0d3b40753ff61efb4d811a6d183e80a)
+- [meta] clean up scripts [`464a0a7`](https://github.com/browserify/createHash/commit/464a0a7f900405198522cdfbb4636a085523f0cf)
+- [meta] use `npmignore` [`597be5a`](https://github.com/browserify/createHash/commit/597be5a8e7f6b409407ac55bd23abada27dc2063)
+- [Deps] update `cipher-base`, `inherits`, `md5-js`, `ripemd160`, `sha.js` [`ebb6fe3`](https://github.com/browserify/createHash/commit/ebb6fe309473de33a6a7706a38f04bb60b97a7bb)
+- Only apps should have lockfiles [`86b273c`](https://github.com/browserify/createHash/commit/86b273c63bc2dd62a3865a60d1ca8da3e244ddc7)
+- [Dev Deps] add `safe-publish-latest` [`9643312`](https://github.com/browserify/createHash/commit/9643312fb93ff8067f8042fe332037a8e4f13f44)
+- [Deps] update `md5.js`, `safe-buffer` [`7cfa0da`](https://github.com/browserify/createHash/commit/7cfa0dac090b278129a6d4614114fe93c638f35e)
+- [Tests] move tests into `test` dir [`2c99d99`](https://github.com/browserify/createHash/commit/2c99d99ed40ab22ddd311f0482d07be4a6f0a6cb)
+- [Dev Deps] update `safe-buffer`, `tape` [`14b9a42`](https://github.com/browserify/createHash/commit/14b9a42a4e5520daa962ebf8c2747010e19440dc)
+- [meta] add `SECURITY.md` [`71e450a`](https://github.com/browserify/createHash/commit/71e450aa6448dff870e941c46768d09a83f5b31b)
+- [meta] add missing `engines.node` [`d334cfd`](https://github.com/browserify/createHash/commit/d334cfdab3243aecd0f01378eb997c524c35e0e6)
+- [Deps] pin `hash-base` to =3.0.3, due to a breaking change [`e7d0b88`](https://github.com/browserify/createHash/commit/e7d0b8878079bf7e565d7c35da81f535d9b5deed)
+- [Deps] remove mistakenly added dep [`abf9b29`](https://github.com/browserify/createHash/commit/abf9b2957cc6a6ebc510fc5a0c3edf4c3042bfc6)
+
 ## [v1.2.0](https://github.com/browserify/createHash/compare/v1.1.3...v1.2.0) - 2018-04-11
 
 ### Merged
